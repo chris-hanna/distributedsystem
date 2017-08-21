@@ -1,0 +1,11 @@
+/connector/local.properties
+/connector/connector.iml
+gradlew
+gradlew.bat
+settings.gradle
+gradle.properties
+build.gradle
+gradle
+build
+.idea
+.gradle
