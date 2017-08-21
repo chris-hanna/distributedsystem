@@ -9,3 +9,7 @@ gradle
 build
 .idea
 .gradle
+app.iml
+proguard-rules.pro
+test
+androidTest
