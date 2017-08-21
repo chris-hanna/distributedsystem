@@ -13,3 +13,9 @@ app.iml
 proguard-rules.pro
 test
 androidTest
+mipmap-hdpi
+mipmap-mdpi
+mipmap-xhdpi
+mipmap-xxhdpi
+mipmap-xxxhdpi
+values
