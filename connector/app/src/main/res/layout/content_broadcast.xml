@@ -19,7 +19,7 @@
         app:layout_constraintHorizontal_bias="0.185"
         app:layout_constraintVertical_bias="0.926" />
 
-    <ListView
+    <ExpandableListView
         android:id="@+id/listview"
         android:layout_width="349dp"
         android:layout_height="421dp"
