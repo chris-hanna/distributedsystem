@@ -39,10 +39,26 @@ public class Connector extends Activity {
 
                 switch(df.pType){
                     case "c":
-                        UDPCommunication asyncTask = new UDPCommunication(d.ip, 50000, df.params);
-                        asyncTask.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
+                        UDPCommunication asyncTask1 = new UDPCommunication(d.ip, 50000, df.params);
+                        asyncTask1.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
                         break;
                     case "v":
+                        Log.d("params", df.params);
+
+                        if(listItems.size() < 2){
+                            break;
+                        }
+
+                        Device d2;
+                        if(groupPosition == 0){
+                            d2 = listItems.get(1);
+                        }else{
+                            d2 = listItems.get(0);
+                        }
+
+                        String msg = d2.ip + "|50000|" + df.params.split(",")[2];
+                        UDPCommunication asyncTask2 = new UDPCommunication(d.ip, 50000, msg);
+                        asyncTask2.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
                         break;
                     default:
                 }
@@ -50,14 +66,14 @@ public class Connector extends Activity {
             }
         });
 
-        TCPReceiver asyncTask1 = new TCPReceiver();
-        asyncTask1.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
+        TCPReceiver asyncTask3 = new TCPReceiver();
+        asyncTask3.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
 
         Button refresh = findViewById(R.id.refresh_button);
         refresh.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                UDPCommunication asyncTask2 = new UDPCommunication("255.255.255.255", 50000, "hello");
-                asyncTask2.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
+                UDPCommunication asyncTask4 = new UDPCommunication("255.255.255.255", 50000, "hello");
+                asyncTask4.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
             }
         });
     }
